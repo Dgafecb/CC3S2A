@@ -33,6 +33,7 @@ public class FootballTeamTest {
     void constructorShouldThrowIllegalArgumentException(int nbOfGamesWon){
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> new FootballTeam(nbOfGamesWon));
+        
     }
     @Test
     void shouldBePossibleToCompareTeams(){
