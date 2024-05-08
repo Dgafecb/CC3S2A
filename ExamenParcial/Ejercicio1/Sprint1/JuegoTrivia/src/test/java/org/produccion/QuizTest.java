@@ -14,7 +14,7 @@ class QuizTest {
         //Arrange
         Quiz trivia = new Quiz();
         //Act
-        boolean pathValido = trivia.cargarPreguntas("/home/pcs5/aaa/CC3S2A/ExamenParcial/Ejercicio1-Sprint1/JuegoTrivia/src/main/resources/preguntas.txt");
+        boolean pathValido = trivia.cargarPreguntas("/home/pcs5/aaa/CC3S2A/ExamenParcial/Ejercicio1/Sprint1/JuegoTrivia/src/main/resources/preguntas.txt");
         //Assert
         assertTrue(pathValido);
     }
