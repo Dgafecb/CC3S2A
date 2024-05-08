@@ -336,3 +336,75 @@ class QuizTest {
 
 }
 ```
+
+##Sprint2
+### Tareas
+1. Ampliar la clase Quiz para incluir un sistema de puntuación que rastree las respuestas
+correctas e incorrectas.
+2. Implementar lógica para múltiples rondas de juego, permitiendo al juego continuar hasta
+que se completen todas las preguntas.
+3. Crear un mecanismo para terminar el juego una vez que se hayan respondido todas las
+preguntas, y mostrar el resultado final al usuario.
+4. Escribir pruebas unitarias para verificar la precisión del sistema de puntuación y la correcta
+funcionalidad del flujo del juego.
+
+### Clase Quiz
+Modificamos el metodo imprimirPreguntas de la clase Quiz para realizar el juego de trivia y agregamos el atributo Puntuacion a la clase Quiz
+```java
+public int imprimirPreguntas(int[] respuestas) {
+        //Clase que dado una lista de preguntas mostrara en consola la trivia para el usuario
+        int i=0;
+        while(!preguntasTrivia.isEmpty()) {
+            Question pregunta = preguntasTrivia.pop();
+            System.out.println(pregunta.descripcion);
+            System.out.println("1) " + pregunta.getRespuesta1());
+            System.out.println("2) " + pregunta.getRespuesta2());
+            System.out.println("3) " + pregunta.getRespuesta3());
+            System.out.println("4) " + pregunta.getRespuesta4());
+            int alternativaCorrecta = pregunta.getRespuestaCorrecta();
+            String respuesta = String.valueOf(respuestas[i]);
+            if (recibirRespuesta(respuesta)) {//Validamos la entrada del usuario
+                if (Integer.parseInt(respuesta) == alternativaCorrecta) {
+                    System.out.println("Correcto!");
+                    puntuacion+=1;
+                } else {
+                    System.out.println("Incorrecto, la respuesta correcta era: " + alternativaCorrecta);
+                }
+                i+=1;
+            } else {
+                preguntasTrivia.add(pregunta);//Si el usuario da un input invalido volvemos a intentar
+            }
+        }
+        return terminarJuego();
+    }
+```
+### Pruebas Unitarias
+Para validar la puntuacion y que el juego termine correctamente creamos los 2 metodos en la clase QuizTest
+```java
+@Test
+    void validarPuntuacionCorrecta(){
+        //Arrange
+        Quiz trivia = new Quiz();
+        boolean pathValido = trivia.cargarPreguntas("/home/pcs5/aaa/CC3S2A/ExamenParcial/Ejercicio1/Sprint2/JuegoTrivia/src/main/resources/preguntas.txt");
+        int[] respuestas = {1,4};
+        int puntuacionCorrecta = 1;
+        //Act
+        int puntuacion = trivia.imprimirPreguntas(respuestas);
+        //Assert
+        assertEquals(puntuacionCorrecta,puntuacion);
+    }
+    @Test
+    void validarJuegoConcluido(){
+        //Arrange
+        Quiz trivia = new Quiz();
+        boolean pathValido = trivia.cargarPreguntas("/home/pcs5/aaa/CC3S2A/ExamenParcial/Ejercicio1/Sprint2/JuegoTrivia/src/main/resources/preguntas.txt");
+        int[] respuestas = {1,2};
+        boolean juegoTerminado = true;
+        //Act
+        int puntuacion = trivia.imprimirPreguntas(respuestas);
+        boolean estadoJuego = trivia.triviaTerminada;
+        //Assert
+        assertEquals(juegoTerminado,estadoJuego);
+    }
+```
+

@@ -17,6 +17,7 @@ class QuizTest {
         boolean pathValido = trivia.cargarPreguntas("/home/pcs5/aaa/CC3S2A/ExamenParcial/Ejercicio1/Sprint2/JuegoTrivia/src/main/resources/preguntas.txt");
         //Assert
         assertTrue(pathValido);
+
     }
 
     @ParameterizedTest
@@ -39,5 +40,29 @@ class QuizTest {
         //Assert
         assertFalse(invalido);
     }
-
+    @Test
+    void validarPuntuacionCorrecta(){
+        //Arrange
+        Quiz trivia = new Quiz();
+        boolean pathValido = trivia.cargarPreguntas("/home/pcs5/aaa/CC3S2A/ExamenParcial/Ejercicio1/Sprint2/JuegoTrivia/src/main/resources/preguntas.txt");
+        int[] respuestas = {1,4};
+        int puntuacionCorrecta = 1;
+        //Act
+        int puntuacion = trivia.imprimirPreguntas(respuestas);
+        //Assert
+        assertEquals(puntuacionCorrecta,puntuacion);
+    }
+    @Test
+    void validarJuegoConcluido(){
+        //Arrange
+        Quiz trivia = new Quiz();
+        boolean pathValido = trivia.cargarPreguntas("/home/pcs5/aaa/CC3S2A/ExamenParcial/Ejercicio1/Sprint2/JuegoTrivia/src/main/resources/preguntas.txt");
+        int[] respuestas = {1,2};
+        boolean juegoTerminado = true;
+        //Act
+        int puntuacion = trivia.imprimirPreguntas(respuestas);
+        boolean estadoJuego = trivia.triviaTerminada;
+        //Assert
+        assertEquals(juegoTerminado,estadoJuego);
+    }
 }

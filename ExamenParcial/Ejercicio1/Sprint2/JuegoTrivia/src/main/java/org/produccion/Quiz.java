@@ -1,4 +1,6 @@
 package org.produccion;
+import com.sun.security.jgss.GSSUtil;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -10,7 +12,9 @@ public class Quiz{
     //Manejara flujo del juego
     // , cargar preguntas,
     // recibir respuestas
-    LinkedList<Question> preguntasTrivia;//Almacenaremos todas las preguntas cargadas aqui
+    public LinkedList<Question> preguntasTrivia;//Almacenaremos todas las preguntas cargadas aqui
+    public int puntuacion =0;
+    public boolean triviaTerminada = false;
     public Quiz(){
         preguntasTrivia = new LinkedList<>();
     }
@@ -41,9 +45,63 @@ public class Quiz{
                 }
                 return false;
     }
-    public void imprimirPreguntas(LinkedList<Question> preguntas){
+    public void imprimirPreguntas(){
         //Clase que dado una lista de preguntas mostrara en consola la trivia para el usuario
-
+        while(!preguntasTrivia.isEmpty()) {
+            Question pregunta = preguntasTrivia.pop();
+            System.out.println(pregunta.descripcion);
+            System.out.println("1) " + pregunta.getRespuesta1());
+            System.out.println("2) " + pregunta.getRespuesta2());
+            System.out.println("3) " + pregunta.getRespuesta3());
+            System.out.println("4) " + pregunta.getRespuesta4());
+            int alternativaCorrecta = pregunta.getRespuestaCorrecta();
+            Scanner scanner = new Scanner(System.in);
+            String respuesta = scanner.nextLine();
+            if (recibirRespuesta(respuesta)) {//Validamos la entrada del usuario
+                if (Integer.parseInt(respuesta) == alternativaCorrecta) {
+                    System.out.println("Correcto!");
+                    puntuacion+=1;
+                } else {
+                    System.out.println("Incorrecto, la respuesta correcta era: " + alternativaCorrecta);
+                }
+            } else {
+                preguntasTrivia.add(pregunta);//Si el usuario da un input invalido volvemos a intentar
+            }
+        }
+        terminarJuego();
+    }
+    public int imprimirPreguntas(int[] respuestas) {
+        //Clase que dado una lista de preguntas mostrara en consola la trivia para el usuario
+        int i=0;
+        while(!preguntasTrivia.isEmpty()) {
+            Question pregunta = preguntasTrivia.pop();
+            System.out.println(pregunta.descripcion);
+            System.out.println("1) " + pregunta.getRespuesta1());
+            System.out.println("2) " + pregunta.getRespuesta2());
+            System.out.println("3) " + pregunta.getRespuesta3());
+            System.out.println("4) " + pregunta.getRespuesta4());
+            int alternativaCorrecta = pregunta.getRespuestaCorrecta();
+            String respuesta = String.valueOf(respuestas[i]);
+            if (recibirRespuesta(respuesta)) {//Validamos la entrada del usuario
+                if (Integer.parseInt(respuesta) == alternativaCorrecta) {
+                    System.out.println("Correcto!");
+                    puntuacion+=1;
+                } else {
+                    System.out.println("Incorrecto, la respuesta correcta era: " + alternativaCorrecta);
+                }
+                i+=1;
+            } else {
+                preguntasTrivia.add(pregunta);//Si el usuario da un input invalido volvemos a intentar
+            }
+        }
+        return terminarJuego();
+    }
+    public int terminarJuego(){
+        triviaTerminada=true;
+        //Una vez terminada las preguntas se mostrara la puntuacion obtenida
+        System.out.println("Tu puntuacion final es: "+puntuacion);
+        System.out.println("Juego terminado");
+        return puntuacion;
     }
     public boolean recibirRespuesta(String opcionElegida){
         //Verificara si las entradas del usuario son validas
