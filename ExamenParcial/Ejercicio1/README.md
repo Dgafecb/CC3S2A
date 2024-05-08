@@ -408,3 +408,41 @@ Para validar la puntuacion y que el juego termine correctamente creamos los 2 me
     }
 ```
 
+## Preguntas relacionadas al juego Trivia 
+1. ¿Qué caracteriza a una metodología ágil y cómo se aplicaría al desarrollo del juego de trivia?
+Describe las características principales como la iteración rápida, la adaptabilidad y la
+colaboración, y explica cómo estas pueden mejorar el desarrollo y la entrega del juego.
+Una metodología ágil esta caracterizada por la flexibilidad y capacidad de adaptarse a requisitos cambiantes, integración continua y la colaboración.
+En el desarrollo del juego de trivia la separación de objetivos en sprints nos permite saber que metas tenemos que cumplir en cada fase del desarrollo del juego, esto nos facilita la integración continua y también nos permite tener claro un orden lo que facilitaría la colaboración con otros desarolladores si este fuera el caso.
+
+2. Explica cómo el principio de entrega continua podría implementarse en el proyecto del juego
+de trivia usando Gradle. Discute el uso de Gradle para automatizar compilaciones, pruebas y
+despliegues, facilitando una integración y entrega continuas.
+
+Gradle nos permite realizar pruebas unitarias y automatizadas, así como la compilación automática de estas, esto nos facilita la entrega continua en un proyecto al poder verificar el código en un ámbito de prueba antes de ser llevado a producción.
+
+3. Describa el ciclo TDD y cómo se aplicaría a una nueva característica en el juego, como la
+implementación del sistema de puntuación. Explica el ciclo de "Red-Green-Refactor" y cómo
+utilizaría TDD para desarrollar y validar la lógica de puntuación del juego.
+
+Primero realizariamos una prueba básica para el sistema de puntuación, como retorna 10. RED
+Podríamos modificar la clase Quiz para que retorne esta puntuación. GREEN
+Luego podríamos refactorizar para dada una lista de respuestas retorne la puntuación valida. REFACTOR
+
+4. ¿Cuáles son los beneficios de utilizar TDD en el desarrollo de software y cómo ayuda a
+prevenir regresiones en el juego de trivia?
+
+El beneficio de utilizar TDD es que los ciclos de RGR son bastante útiles para poder retroalimentarme continuamente sobre lo que tiene que hacer mi código en base a como fallan las pruebas.
+
+5. Proporciona un ejemplo de cómo podrías refactorizar un bloque de código del juego de
+trivia para mejorar su mantenibilidad.
+Podría refactorizar el método cargarPreguntas 
+6. Explica la importancia de la refactorización en los sprints de desarrollo ágil y cómo se integra
+en el proceso de TDD. Discute cómo la refactorización es una parte integral del ciclo de TDD
+y cómo contribuye a la mejora continua del código en un entorno ágil.
+7. Describe cómo JUnit 5 puede utilizarse para implementar pruebas parametrizadas en el
+juego de trivia. Proporciona un ejemplo concreto. Explica la funcionalidad de las pruebas
+parametrizadas en JUnit 5 y cómo se podría usar para probar diferentes casos de entrada
+para validar la lógica del juego.
+8. ¿Qué características nuevas introduce JUnit 5 que son particularmente útiles para proyectos
+complejos como el juego de trivia?
