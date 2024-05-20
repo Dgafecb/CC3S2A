@@ -49,3 +49,4 @@ La latencia de Internet es menor de 75 ms desde el navegador del cliente hasta e
 
 **Medida de respuesta:**  
 
+[Respuestas de Lerzundi](https://github.com/Jxtrex/Lerzundi-CC3S2_2024-1/tree/main/ACTIVIDADES/Practicas%20de%20ingenieria%20para%20construir%20software%20de%20calidad/Actividad%20Calidad%20de%20software%20a%20traves%20de%20escenarios)
