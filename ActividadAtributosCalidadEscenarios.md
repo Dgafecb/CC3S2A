@@ -18,7 +18,7 @@ Medida de respuesta:
 
 
 # Usabilidad
-Importancia: Una buena usabilidad garantiza que los usuarios puedan lograr realizar sus tareas de manera sencilla lo que mejora la experiencia de usuario y satisfacción.
+Importancia: Una buena usabilidad garantiza que los usuarios puedan lograr realizar sus tareas de manera sencilla e intuitiva lo que mejora la experiencia de usuario y satisfacción.
 
 Origen: Cliente usando un navegador web estándar(Firefox)
 
@@ -34,11 +34,11 @@ Respuesta: El sistema de búsqueda ofrece multiples sugerencias contextuales en 
 Medida de respuesta: El sistema cumple con la heurística de usabilidad prevencion de errores al evitar que ocurran problemas de interacción.
 
 # Escalabilidad
-Importancia: 
+Importancia: La escalabilidad asegura que la calidad de la experiencia del usuario no se vea afectada con el ingreso de nuevos usuarios al sistema.
 
-Origen: Cliente usando un navegador web estándar(Firefox)
+Origen: Gran flujo de nuevos clientes usando un navegador web estándar.
 
-Estímulo: Un gran flujo de nuevos usuarios sube nuevos videos
+Estímulo: Los nuevos usuarios hacen clic en un video/ suben un video.
 
 Entorno: El sistema está operando normalmente, el sistema tiene 7283336 usuarios concurrentes.
 La latencia de Internet es menor de 75 ms desde el navegador del cliente hasta el sitio web.
