@@ -31,7 +31,7 @@ La latencia de Internet es menor de 75 ms desde el navegador del cliente hasta e
 
 **Respuesta:** El sistema de búsqueda ofrece multiples sugerencias contextuales en caso de que el usuario realize un error al escribir en la barra de búsqueda.
 
-**Medida de respuesta:** El sistema cumple con la heurística de usabilidad prevencion de errores al evitar que ocurran problemas de interacción.
+**Medida de respuesta:** El sistema cumple con la heurística de usabilidad de Nielsen prevencion de errores al evitar que ocurran problemas de interacción en el flujo de búsqueda.
 
 # Escalabilidad
 **Importancia:** La escalabilidad asegura que la calidad de la experiencia del usuario no se vea afectada con el ingreso de nuevos usuarios al sistema.
