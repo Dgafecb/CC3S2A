@@ -18,7 +18,7 @@ Medida de respuesta:
 
 
 # Usabilidad
-Importancia: Una buena usabilidad garantiza que los usuarios puedan lograr realizar sus tareas con mínimo estrés y errores lo que mejora la experiencia de usuario y satisfacción.
+Importancia: Una buena usabilidad garantiza que los usuarios puedan lograr realizar sus tareas de manera sencilla lo que mejora la experiencia de usuario y satisfacción.
 
 Origen: Cliente usando un navegador web estándar(Firefox)
 
